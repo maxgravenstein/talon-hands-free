@@ -25,6 +25,11 @@ ctx.keymap({
     'double spacing': Key('cmd-2'),
     'sngle spacing': Key('cmd-1'),
 
+    #'jump left': Key('alt-left'),
+    #'jump right': Key('alt-right'),
+    #"bagel": Key("cmd-left"), #beginning of line
+    #"eel": Key("cmd-right"), #end of line
+    
     'select all': Key('cmd-a'),
     'select leftward': Key('alt-shift-left'),
     'select rightward': Key('alt-shift-right'),
@@ -38,4 +43,6 @@ ctx.keymap({
     'cut': Key('cmd-x'),
     'copy': Key('cmd-c'),
     'paste': Key('cmd-v'),
+    
+    'print': Key('cmd-p'),
 })
