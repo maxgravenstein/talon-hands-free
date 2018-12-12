@@ -7,7 +7,7 @@ import string
 mapping = {}
 
 # used for auto-spacing
-punctuation = set('.,-!?')
+punctuation = set('.,!?')
 
 def parse_word(word):
     word = str(word).lstrip('\\').split('\\', 1)[0]
@@ -55,6 +55,9 @@ def rot13(i, word, _):
     return out
 
 formatters = {
+    'title':  (False, lambda i, word, _: word.capitalize()),
+    'allcaps': (False, lambda i, word, _: word.upper()),
+    
     'dunder': (True,  lambda i, word, _: '__%s__' % word if i == 0 else word),
     'camel':  (True,  lambda i, word, _: word if i == 0 else word.capitalize()),
     'snake':  (True,  lambda i, word, _: word if i == 0 else '_'+word),
@@ -62,8 +65,6 @@ formatters = {
     # spinal or kebab?
     'kebab':  (True,  lambda i, word, _: word if i == 0 else '-'+word),
     # 'sentence':  (False, lambda i, word, _: word.capitalize() if i == 0 else word),
-    'title':  (False, lambda i, word, _: word.capitalize()),
-    'allcaps': (False, lambda i, word, _: word.upper()),
     'dubstring': (False, surround('"')),
     'string': (False, surround("'")),
     'padded': (False, surround(" ")),
@@ -118,6 +119,21 @@ ctx.keymap({
     '(%s)+ [<dgndictation>]' % (' | '.join(formatters)): FormatText,
 
     "prefies": Key("cmd-,"), #preferences
+
+    #punctuation and symbols
+    'question [mark]': '?',
+    '(bang | exclamation point)': '!',
+    'dollar [sign]': '$',
+    '(paren | left paren)': '(', '(rparen | are paren | right paren)': ')',
+    '(brace | left brace)': '{', '(rbrace | are brace | right brace)': '}',
+    '(angle | left angle | less than)': '<', '(rangle | are angle | right angle | greater than)': '>',
+
+    '(star | asterisk)': '*',
+    '(pound | hash [sign] | octo | thorpe | number sign)': '#',
+    'percent [sign]': '%',
+    'caret': '^',
+    'at sign': '@',
+    '(and sign | ampersand | amper)': '&',
         
     #PROGRAMMING----
     '(dubquote | double quote)': '"',
