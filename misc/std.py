@@ -57,7 +57,6 @@ def rot13(i, word, _):
 formatters = {
     'title':  (False, lambda i, word, _: word.capitalize()),
     'allcaps': (False, lambda i, word, _: word.upper()),
-    
     'dunder': (True,  lambda i, word, _: '__%s__' % word if i == 0 else word),
     'camel':  (True,  lambda i, word, _: word if i == 0 else word.capitalize()),
     'snake':  (True,  lambda i, word, _: word if i == 0 else '_'+word),
@@ -134,6 +133,10 @@ ctx.keymap({
     'caret': '^',
     'at sign': '@',
     '(and sign | ampersand | amper)': '&',
+
+    #Names
+    #put names that get mispelled here
+    #'graven stine': 'Gravenstein'
         
     #PROGRAMMING----
     '(dubquote | double quote)': '"',
@@ -193,7 +196,11 @@ ctx.keymap({
 
     'args': ['()', Key('left')],
     'index': ['[]', Key('left')],
-    'block': [' {}', Key('left enter enter up tab')],
+    
+    #Added by Me
+    'quotes': ['""', Key('left')],
+    
+    'block': [' {}', Key('left enter enter up tasb')],
     'empty array': '[]',
     'empty dict': '{}',
 
