@@ -1,6 +1,5 @@
 from talon.voice import Context, Key
 from os import system
-from talon.voice import Context, Key
 
 ctx = Context("navigation")
 
@@ -42,25 +41,25 @@ keymap = {
 
     "tarsh": Key("shift-tab"), #unindent line of code
     "slap": [Key("cmd-right enter")],
-    "peg": Key("alt-left"), #word left
-    "fran": Key("alt-right"), #word right
-    "ricky": Key("cmd-right"), #end of line
+    "jump left word": Key("alt-left"), #word left
+    "jump word": Key("alt-right"), #word right
+    "eel": Key("cmd-right"), #end of line
     "derek": Key("cmd-right space"),
-    "lefty": Key("cmd-left"), #beginning of line
+    "bagel": Key("cmd-left"), #beginning of line
     # selecting
     "select all": Key("cmd-a"), #all
     "shreepway": Key("cmd-shift-up"), #all left and above cursor
     "shroomway": Key("cmd-shift-down"), #all right and below cursor
-    "lecksy": Key("cmd-shift-left"), #line left
-    "ricksy": Key("cmd-shift-right"), #line right
+    "select left": Key("cmd-shift-left"), #line left
+    "select right": Key("cmd-shift-right"), #line right
     
     "shreep": Key("shift-up"), #left to cursor position line above
     "shroom": Key("shift-down"), #right to cursor position line below
     "(schrim | shift left)": Key("shift-left"), #selects one space left
     "(shrish | shift right)": Key("shift-right"), #selects on space right
     
-    "scram": Key("alt-shift-left"),
-    "scrish": Key("alt-shift-right"),
+    "select word left": Key("alt-shift-left"),
+    "select word right": Key("alt-shift-right"),
 
     "cut": Key("cmd-x"),
     "copy": Key("cmd-c"),
@@ -69,6 +68,6 @@ keymap = {
     "zoom in": Key("cmd-="),
     "zoom out": Key("cmd--"),
     "zoom normal": Key("cmd-0"),
-}
+    }
 
 ctx.keymap(keymap)
